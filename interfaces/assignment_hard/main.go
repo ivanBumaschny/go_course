@@ -21,7 +21,7 @@ func main() {
 	defer file.Close() // Ensure the file is closed when the function exits
 
 	lw := logWriter{}
-	io.Copy(lw, file)
+	io.Copy(lw, file) // the *File typ implements a Reader interface
 }
 
 func (logWriter) Write(bs []byte) (int, error) {
